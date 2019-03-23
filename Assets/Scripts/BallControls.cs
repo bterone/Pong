@@ -25,7 +25,7 @@ public class BallControls : MonoBehaviour
         transform.position = Vector2.zero;
     }
 
-    void RestartGame()
+    public void RestartGame()
     {
         ResetBall();
         Invoke("GoBall", 1);
