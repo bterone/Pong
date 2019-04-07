@@ -17,7 +17,7 @@ public class PlayerControls : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
         var vel = rb2d.velocity;
 
