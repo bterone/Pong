@@ -27,14 +27,14 @@ public class GameManager : MonoBehaviour
         if (PlayerScore1 == 10)
         {
             playerWin.text = "PLAYER ONE WIN";
-            /*GameObject.FindGameObjectWithTag("Ball").
-                SendMessage("RestartGame", 0.5f, SendMessageOptions.RequireReceiver);*/
+            GameObject.FindGameObjectWithTag("Ball").
+                SendMessage("RestartGame", 0.5f, SendMessageOptions.RequireReceiver);
         }
         else if (PlayerScore2 == 10)
         {
             playerWin.text = "PLAYER TWO WIN";
-            /*GameObject.FindGameObjectWithTag("Ball").
-                SendMessage("RestartGame", 0.5f, SendMessageOptions.RequireReceiver);*/
+            GameObject.FindGameObjectWithTag("Ball").
+                SendMessage("RestartGame", 0.5f, SendMessageOptions.RequireReceiver);
         }
         else
         {
