@@ -49,8 +49,8 @@ public class GameManager : MonoBehaviour
         UpdateScore();
         theBall.SendMessage("RestartGame", 0.5f, SendMessageOptions.RequireReceiver);
     }
-
-        public void UpdateScore() {
+    
+    public void UpdateScore(){
         P1Score.text = PlayerScore1.ToString();
         P2Score.text = PlayerScore2.ToString();
     }
