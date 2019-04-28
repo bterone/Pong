@@ -46,7 +46,13 @@ public class GameManager : MonoBehaviour
     {
         PlayerScore1 = 0;
         PlayerScore2 = 0;
+        UpdateScore();
         theBall.SendMessage("RestartGame", 0.5f, SendMessageOptions.RequireReceiver);
+    }
+
+        public void UpdateScore() {
+        P1Score.text = PlayerScore1.ToString();
+        P2Score.text = PlayerScore2.ToString();
     }
 
     void Start()
@@ -56,4 +62,5 @@ public class GameManager : MonoBehaviour
         P2Score = GameObject.Find("Score2").GetComponent<Text>();
         playerWin = GameObject.Find("Victory").GetComponent<Text>();
     }
+
 }
