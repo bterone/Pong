@@ -17,8 +17,13 @@ public class PlayerControls : MonoBehaviour
     }
 
     // Update is called once per frame
-    void FixedUpdate()
+    void Update()
     {
+        PlayerMovement();
+        KeepInBound();
+    }
+
+    void PlayerMovement(){
         var vel = rb2d.velocity;
 
         if (Input.GetKey(moveUp))
@@ -35,7 +40,9 @@ public class PlayerControls : MonoBehaviour
         }
 
         rb2d.velocity = vel;
+    }
 
+    void KeepInBound(){
         var pos = transform.position;
 
         if (pos.y > boundY)
