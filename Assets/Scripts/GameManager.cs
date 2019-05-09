@@ -8,7 +8,7 @@ public class GameManager : MonoBehaviour
     public static int PlayerScore1 = 0;
     public static int PlayerScore2 = 0;
 
-    public GameObject theBall;
+    public GameObject theBall, paddleOne, paddleTwo;
     public static Text P1Score, P2Score, playerWin;
 
     public static void Score (string wallID)
@@ -48,6 +48,8 @@ public class GameManager : MonoBehaviour
         PlayerScore2 = 0;
         UpdateScore();
         theBall.SendMessage("RestartGame", 0.5f, SendMessageOptions.RequireReceiver);
+        paddleOne.Transform.position = new Vector3(-4f,0f,0f);
+        paddleTwo.Transform.position = new Vector3(4f,0f,0f);
     }
     
     public void UpdateScore(){
@@ -61,6 +63,8 @@ public class GameManager : MonoBehaviour
         P1Score = GameObject.Find("Score1").GetComponent<Text>();
         P2Score = GameObject.Find("Score2").GetComponent<Text>();
         playerWin = GameObject.Find("Victory").GetComponent<Text>();
+        paddleOne = GameObject.Find("Paddle1");
+        paddleTwo = GameObject.Find("Paddle2");
     }
 
 }
